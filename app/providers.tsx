@@ -17,7 +17,7 @@ interface SolanaProviderProps {
 }
 
 export const SolanaProvider: FC<SolanaProviderProps> = ({ children }) => {
-  const rpcUrl = process.env.NEXT_PUBLIC_RPC_URL || "https://lively-floral-haze.solana-mainnet.quiknode.pro/50e75ef24f3dd84f9b4a04b395001d2f39833a5e";
+  const rpcUrl = "https://lively-floral-haze.solana-mainnet.quiknode.pro/50e75ef24f3dd84f9b4a04b395001d2f39833a5e"; //this should ideally be a .env variable
  
 
   const network = WalletAdapterNetwork.Mainnet
