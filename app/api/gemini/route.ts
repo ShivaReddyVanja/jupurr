@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { parseIntent } from '@/lib/gemini';
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "AIzaSyBoPG1drfnKQPc3aZjYDVMWIV3sdTsGxDQ";
 
 export async function POST(req:Request) {
   try {

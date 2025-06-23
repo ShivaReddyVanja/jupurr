@@ -14,7 +14,7 @@ export default function LandingPage() {
       {/* Content Overlay */}
       <div className="relative z-10 min-h-screen flex flex-col">
         {/* Header */}
-        <header className="flex items-center justify-between p-6 lg:p-8">
+        <header className="flex items-center justify-between p-2 lg:p-4">
           <div className="flex items-center">
             <Image src="/jupiter.png" alt="Jupurr Logo" width={120} height={40} className="h-10 w-auto" />
             <p className="text-white">Jupurr</p>
@@ -33,18 +33,18 @@ export default function LandingPage() {
         {/* Main Content */}
         <main className="flex-1 flex flex-col items-center justify-center px-6 lg:px-8 text-center">
           {/* Cat Mascot */}
-          <div className="mb-8">
+          <div className="mb-2">
             <Image
               src="/jupurr.png"
               alt="Jupurr Cat Mascot"
-              width={300}
-              height={120}
-              className="w-24 h-24 lg:w-32 lg:h-32"
+              width={250}
+              height={150}
+              className=""
             />
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white  leading-tight">
             DeFi that{" "}
             <span className="bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent">
               purrs back.
@@ -52,14 +52,14 @@ export default function LandingPage() {
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg lg:text-xl text-gray-300 mb-12 max-w-2xl leading-relaxed">
+          <p className="text-lg lg:text-xl text-gray-300 mb-6 max-w-2xl leading-relaxed">
             Jupurr, your cuddly AI cat, purrs
             <br />
             through all Jupiter —just chat!
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 mb-4">
             <Button
               variant="outline"
               className="bg-gray-800/50 border-gray-600 text-gray-300 hover:bg-gray-700/50 hover:text-white px-6 py-3"
@@ -85,7 +85,7 @@ export default function LandingPage() {
 
           {/* Wallet Connection Interface */}
           <div className="w-full max-w-2xl">
-            <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6">
+            <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 flex justify-between items-center">
               <div className="flex items-center justify-between mb-4">
                 <input
                   type="text"
@@ -95,7 +95,7 @@ export default function LandingPage() {
                 />
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-gray-500 text-sm">0.0000</span>
+              
                 <Link href="/jupurr">
                   <Button className="bg-green-500 hover:bg-green-600 text-black font-semibold px-6 py-2 rounded-lg">
                     Try it now
