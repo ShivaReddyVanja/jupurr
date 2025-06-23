@@ -16,6 +16,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Jupurr - Defi that purrs back",
   description: "Jupur hepls you to access all jupiter features via simple chat interface",
+  icons:{
+    icon:"/favicon.png"
+
+  }
 };
 
 export default function RootLayout({
