@@ -15,6 +15,7 @@ export async function POST(req:Request) {
     const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
     const body = await req.json();
     const message = body.message;
+    const history = body.history;
 
     const previousContext = body.previousContext || null; 
 
@@ -85,7 +86,7 @@ Follow these strict rules for your output and behavior:
 
 Never ignore rule number 9 , and things mentioned as Very important, 
 
-Previous_Interaction_Context: \ ${JSON.stringify(previousContext || {})}\nMessage: "${message}"`;
+Previous_Interaction_Context: \ ${JSON.stringify(history || {})}\nMessage: "${message}"`;
 
     if (!message) {
       return new Response(

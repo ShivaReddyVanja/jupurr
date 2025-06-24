@@ -28,8 +28,8 @@ export async function handleSend(
   setIsLoading(true);
 
   // Find the last bot message that contains structured data (LLM's previous response)
-  const lastBotMessage = messages.slice().reverse().find(msg => msg.sender === 'bot' && msg.data);
-  const previousLLMResponseData = lastBotMessage ? lastBotMessage.data : null;
+  const lastBotMessage = messages.slice().reverse().find(msg => msg.sender === 'bot' && msg.text);
+  const previousLLMResponseData = lastBotMessage ? lastBotMessage.text : null;
 
   try {
     // Pass the current user input, the full message history, and the previous LLM response data

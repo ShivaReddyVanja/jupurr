@@ -3,25 +3,22 @@
 import { useState, useEffect } from 'react';
 import { useWallet, useConnection } from '@solana/wallet-adapter-react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
-import { handleWalletStatus } from '@/services'; // Ensure this path is correct
+import { handleWalletStatus } from '@/services';
 import { handleSend } from "@/services/handleSend"
 import Image from 'next/image';
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type JupiterQuoteResponse = any; 
 
 type SwapDetails = { amount: number; fromToken: string; toToken: string };
-type Message = { sender: string; text: string };
+type Message = { sender: "user" | "bot"; text: string };
 
 export default function Chat() {
-  // Existing state from your functional Chat component
+
   const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState(''); // Renamed from 'message' to 'input' to avoid conflict if you copy-pasted directly
+  const [input, setInput] = useState(''); 
   const [isLoading, setIsLoading] = useState(false);
   const [pendingJupiterQuote, setPendingJupiterQuote] = useState<JupiterQuoteResponse | null>(null);
   const [pendingSwapDetails, setPendingSwapDetails] = useState<SwapDetails | null>(null);
@@ -160,18 +157,18 @@ export default function Chat() {
             <div className="p-3 pt-2">
               <div className="flex items-center gap-3 bg-black/80 backdrop-blur-sm rounded-2xl p-2 border border-slate-700/50">
                 <Input
-                  value={input} // Bind to your 'input' state
+                  value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Meow! type here nya~"
                   className="flex-1 bg-transparent border-0 text-white placeholder:text-slate-500 focus-visible:ring-0 focus-visible:ring-offset-0 text-[8px] md:text-sm"
                   onKeyPress={(e) => {
                     if (e.key === "Enter") {
-                      onHandleSend(); // Call your existing send handler
+                      onHandleSend();
                     }
                   }}
                 />
                 <Button
-                  onClick={onHandleSend} // Call your existing send handler
+                  onClick={onHandleSend} 
                   className="bg-gradient-to-r from-green-400 to-emerald-500 hover:from-green-500 hover:to-emerald-600 text-black font-medium px-3 md:px-6 rounded-xl text-sm"
                 >
                   Send

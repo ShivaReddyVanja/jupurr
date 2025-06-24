@@ -10,10 +10,10 @@ export async function processUserInput(
   // We filter out the *current* user message that was just added in handleSend,
   // as it will be sent separately as 'message'.
   const geminiHistory = chatHistory
-    .filter(msg => !(msg.content === currentMessage && msg.sender === 'user' && chatHistory.indexOf(msg) === chatHistory.length - 1))
+    .filter(msg => !(msg.text === currentMessage && msg.sender === 'user' && chatHistory.indexOf(msg) === chatHistory.length - 1))
     .map(msg => ({
-      role: msg.sender === 'user' ? 'user' : 'model',
-      parts: [{ text: msg.content }],
+      role: msg.sender === 'user' ? 'user' : 'bot',
+      parts: [{ text: msg.text }],
     }));
 
   try {

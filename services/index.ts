@@ -1,12 +1,11 @@
 import { parseIntent } from '@/lib/gemini';
 import { getSwapQuote, getSwapTransaction } from '@/lib/jupiter';
-// services/index.ts
 import { PublicKey, Connection, TransactionSignature, VersionedTransaction } from '@solana/web3.js';
 import { WalletAdapterProps } from '@solana/wallet-adapter-base';
 import { processUserInput } from './processUserInput';
-
+import { Message } from '@/types';
 type SwapDetails = { amount: number; fromToken: string; toToken: string };
-type Message = { sender: string; text: string };
+
 type IntentHandler = (
   data: any,
   setMessages: React.Dispatch<React.SetStateAction<Message[]>>,
@@ -30,7 +29,7 @@ export const handleWalletStatus = (
   publicKey: any,
   setMessages: React.Dispatch<React.SetStateAction<Message[]>>,
 ) => {
-  const message = connected && publicKey
+  const message:Message = connected && publicKey
     ? { sender: 'bot', text: `Wallet connected: ${publicKey.toBase58().slice(0, 8)}...` }
     : { sender: 'bot', text: 'Wallet disconnected.' };
   setMessages((prev) => [...prev, message]);
