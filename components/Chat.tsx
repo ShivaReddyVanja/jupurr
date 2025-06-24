@@ -10,6 +10,7 @@ import Image from 'next/image';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type JupiterQuoteResponse = any; 
 
 type SwapDetails = { amount: number; fromToken: string; toToken: string };

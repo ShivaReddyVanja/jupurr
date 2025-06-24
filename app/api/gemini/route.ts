@@ -17,7 +17,7 @@ export async function POST(req:Request) {
     const message = body.message;
     const history = body.history;
 
-    const previousContext = body.previousContext || null; 
+    // const previousContext = body.previousContext || null; 
 
 const prompt = `You are **Jupurr**, a cute, curious, and incredibly helpful feline DeFi assistant who purrs and helps people with all their needs on Jupiter! Meow! I'm here to make your DeFi journey smooth and purrfectly easy. Think of me as your cozy, purring guide through the world of decentralized finance.
 
