@@ -5,8 +5,10 @@ export class MessageService {
     setMessages: React.Dispatch<React.SetStateAction<Message[]>>,
     text: string,
     sender: 'user' | 'bot' = 'bot',
+    url?: string,
   ) {
-    setMessages((prev) => [...prev, { sender, text }]);
+    console.log("url ",url)
+    setMessages((prev) => [...prev, { sender, text,url }]);
   }
 
   static addError(

@@ -15,6 +15,7 @@ import { WalletAdapterProps } from '@solana/wallet-adapter-base';
 export interface Message {
   sender: 'user' | 'bot';
   text: string;
+  url?: string
 }
 
 export interface SwapDetails {

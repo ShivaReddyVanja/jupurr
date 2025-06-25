@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Message } from '@/types'; 
+import { IntentData, Message } from '@/types'; 
 
 export async function processUserInput(
   currentMessage: string,
@@ -28,8 +28,8 @@ export async function processUserInput(
     });
 
     const data = res.data;
-    const { intent, amount, fromToken, toToken, response } = data;
-    return { intent, amount, fromToken, toToken, response };
+    const { intent, amount, fromToken, toToken, response }  = data as IntentData;
+    return { intent , amount, fromToken, toToken, response };
 
   } catch (error) {
     console.error('Error calling backend API:', error);

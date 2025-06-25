@@ -3,7 +3,7 @@ import { WalletAdapterProps } from '@solana/wallet-adapter-base';
 import { processUserInput } from '@/services/processUserInput';
 import { IntentService } from './intentService';
 import { SwapService } from './swapService';
-import { Message, Quote, SwapDetails } from '@/types';
+import { IntentData, Message, Quote, SwapDetails } from '@/types';
 import { MessageService } from './messageService';
 
 export async function handleSend(
@@ -33,7 +33,7 @@ export async function handleSend(
 
   try {
     // Pass the current user input, the full message history, and the previous LLM response data
-    const data = await processUserInput(input, messages, previousLLMResponseData);
+    const data = await processUserInput(input, messages, previousLLMResponseData) as IntentData;
     const swapService = new SwapService(connection);
     const intentService = new IntentService(swapService);
     await intentService.handleIntent(data, { connected, publicKey, connection, signTransaction, pendingQuote, pendingSwap }, setMessages, setPending);

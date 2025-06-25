@@ -121,3 +121,47 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+.custom-gradient-border {
+  background: linear-gradient(
+    113.61deg,
+    rgba(146, 249, 128, 0.4) 5.24%,
+    rgba(251, 252, 185, 0.4) 23.04%,
+    rgba(200, 252, 195, 0.4) 31.45%,
+    rgba(161, 251, 224, 0.4) 44.7%,
+    rgba(41, 250, 170, 0.4) 69.25%,
+    rgba(0, 249, 91, 0.4) 116.15%
+  );
+  border: 2px solid transparent;
+  box-sizing: border-box;
+}
+
+.button-primary{
+  background:linear-gradient(
+  113.61deg,
+  #92F980 5.24%,
+  #FBFCB9 23.04%,
+  #C8FCC3 31.45%,
+  #A1FBE0 44.7%,
+  #29FAAA 69.25%,
+  #00F95B 116.15%
+);
+
+}
+
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.chat-messages::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.chat-messages {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for Edge and IE */
+.chat-messages {
+  -ms-overflow-style: none;
+}

@@ -82,7 +82,7 @@ export class IntentService {
         return;
       }
       const txid = await this.swapService.executeSwap(context.pendingQuote, context.publicKey, context.signTransaction);
-      MessageService.addMessage(setMessages, `Swap successful! View: https://explorer.solana.com/tx/${txid}`);
+      MessageService.addMessage(setMessages, `Swap successful !` , "bot" ,`https://explorer.solana.com/tx/${txid}`);
       setPending(null, null);
     } catch (error: any) {
       MessageService.addError(setMessages, `Swap failed: ${error.message}`);
