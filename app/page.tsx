@@ -8,17 +8,16 @@ export default function LandingPage() {
     <div className="min-h-screen relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image src="/bg.png" alt="Sci-fi landscape background" fill className="object-cover" priority />
+        <Image src="/newbg.png" alt="Sci-fi landscape background" fill className="object-cover" priority />
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 min-h-screen flex flex-col">
+      <div className="relative z-200 min-h-screen flex flex-col">
         {/* Header */}
         <header className="flex items-center justify-between p-2 lg:p-4">
           <div className="flex items-center">
-            <Image src="/jupiter.png" alt="Jupurr Logo" width={120} height={40} className="h-10 w-auto" />
-            <p className="text-white">Jupurr</p>
-
+            <Image src="/jupurr.png" alt="Jupurr Logo" width={40} height={40} className="aspect-auto align-middle" />
+            <p className="text-white font-semibold mt-2 text-lg">Jupurr</p>
           </div>
           <Link href="/jupurr">
             <Button
@@ -37,25 +36,23 @@ export default function LandingPage() {
             <Image
               src="/jupurr.png"
               alt="Jupurr Cat Mascot"
-              width={250}
+              width={200}
               height={150}
               className=""
             />
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white  leading-tight">
-            DeFi that{" "}
-            <span className="bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent">
-              purrs back.
-            </span>
+          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-hero  leading-tight">
+            DeFi that{" "} purrs back.
+      
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg lg:text-xl text-gray-300 mb-6 max-w-2xl leading-relaxed">
-            Jupurr, your cuddly AI cat, purrs
+          <p className="text-lg lg:text-xl text-gray-300 mb-6 max-w-2xl leading-relaxed font-poppins">
+            Cuddly Ai companion that can hanlde swaps, buys, 
             <br />
-            through all Jupiter —just chat!
+            triggers & more using jupiter for you !
           </p>
 
           {/* Action Buttons */}
@@ -97,9 +94,9 @@ export default function LandingPage() {
               <div className="flex items-center justify-between">
               
                 <Link href="/jupurr">
-                  <Button className="bg-green-500 hover:bg-green-600 text-black font-semibold px-6 py-2 rounded-lg">
+                  <Button className="button-primary hover:bg-green-600 text-black font-semibold px-6 py-2 rounded-lg">
                     Try it now
-                    <Plus className="ml-2 h-4 w-4" />
+             
                   </Button>
                 </Link>
               </div>

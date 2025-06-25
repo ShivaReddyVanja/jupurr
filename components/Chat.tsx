@@ -89,9 +89,9 @@ export default function Chat() {
         <div className="flex items-center">
           <div className="">
             {/* <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full opacity-80"></div> */}
-            <Image src={"/jupurr.png"} height={60} width={60} alt="juprr" />
+            <Image src={"/jupurr.png"} height={40} width={40} alt="juprr" />
           </div>
-          <span className="text-white font-semibold text-lg">Jupurr</span>
+          <span className="text-white font-semibold text-lg mt-2">Jupurr</span>
         </div>
         {/* Replaced static connect button with WalletMultiButton */}
         <WalletMultiButton className=" text-whit bg-gradient-to-br from-slate-900 via-slate-800 to-teal-900" />

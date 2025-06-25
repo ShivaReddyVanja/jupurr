@@ -149,6 +149,20 @@
 );
 
 }
+.text-hero {
+  background: linear-gradient(
+    113.61deg,
+    #92F980 5.24%,
+    #FBFCB9 23.04%,
+    #C8FCC3 31.45%,
+    #A1FBE0 44.7%,
+    #29FAAA 69.25%,
+    #00F95B 116.15%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
 
 /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
