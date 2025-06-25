@@ -1,6 +1,6 @@
 
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useWallet, useConnection } from '@solana/wallet-adapter-react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { handleWalletStatus } from '@/services';
@@ -26,6 +26,7 @@ export default function Chat() {
 
   const { publicKey, connected, signTransaction } = useWallet();
   const { connection } = useConnection();
+  const lastmessageRef = useRef<HTMLDivElement>(null)
 
 
 
@@ -33,11 +34,21 @@ export default function Chat() {
     handleWalletStatus(connected, publicKey, setMessages);
   }, [connected, publicKey]);
 
+  useEffect(()=>{
+    const scrollToDiv = () => {
+    if (lastmessageRef.current) {
+      lastmessageRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+  scrollToDiv()
+  },[messages])
+
   // Function to pass to handleSend to update pending state
   const setPendingSwap = (quote: JupiterQuoteResponse | null, details: SwapDetails | null) => {
     setPendingJupiterQuote(quote);
     setPendingSwapDetails(details);
   };
+  
 
   const onHandleSend = () => {
     handleSend(
@@ -98,7 +109,7 @@ export default function Chat() {
 
                     </div>
                   )}
-                  <div className={`flex items-center gap-3 max-w-lg ${msg.sender === 'user' ? 'flex-row-reverse' : ''}`}>
+                  <div ref={messages.length -1 === i ? lastmessageRef: null} className={`flex items-center gap-3 max-w-lg ${msg.sender === 'user' ? 'flex-row-reverse' : ''}`}>
                     <div className={`rounded-2xl px-2 py-2 shadow-lg ${'bg-slate-800/80 backdrop-blur-sm border border-slate-700/30'}`}>
                       <p className={`${'text-slate-200'} text-[8px] md:text-xs leading-relaxed`}>
                         {msg.text}

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Message } from '@/types'; // Ensure Message type includes 'data' property
+import { Message } from '@/types'; 
 
 export async function processUserInput(
   currentMessage: string,
