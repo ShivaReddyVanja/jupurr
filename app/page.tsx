@@ -17,7 +17,7 @@ export default function LandingPage() {
         <header className="flex items-center justify-between p-2 lg:p-4">
           <div className="flex items-center">
             <Image src="/jupurr.png" alt="Jupurr Logo" width={40} height={40} className="aspect-auto align-middle" />
-            <p className="text-white font-semibold mt-2 text-lg">Jupurr</p>
+            <p className="text-white font-semibold md:mt-2 text-lg">Jupurr</p>
           </div>
           <Link href="/jupurr">
             <Button
@@ -43,13 +43,13 @@ export default function LandingPage() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-hero  leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-hero  leading-tight">
             DeFi that{" "} purrs back.
       
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg lg:text-xl text-gray-300 mb-6 max-w-2xl leading-relaxed font-poppins">
+          <p className="text-sm sm:text-lg lg:text-xl text-gray-300 mb-6 max-w-2xl leading-relaxed font-poppins">
             Cuddly Ai companion that can hanlde swaps, buys, 
             <br />
             triggers & more using jupiter for you !
@@ -82,16 +82,16 @@ export default function LandingPage() {
 
           {/* Wallet Connection Interface */}
           <div className="w-full max-w-2xl">
-            <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 flex justify-between items-center">
-              <div className="flex items-center justify-between mb-4">
+            <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-2 flex justify-between items-center">
+              <div className="flex items-center justify-between ">
                 <input
                   type="text"
                   placeholder="Connect my wallet nya~"
-                  className="bg-transparent text-gray-300 placeholder-gray-500 text-lg flex-1 outline-none"
+                  className="bg-transparent text-gray-300 placeholder-gray-500 text-sm sm:text-lg  outline-none w-fit"
                   readOnly
                 />
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center">
               
                 <Link href="/jupurr">
                   <Button className="button-primary hover:bg-green-600 text-black font-semibold px-6 py-2 rounded-lg">

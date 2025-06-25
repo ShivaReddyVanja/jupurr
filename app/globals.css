@@ -164,6 +164,59 @@
   color: transparent;
 }
 
+.wallet-adapter-button{
+  background:#C7F2841A;
+  border-radius: 20px;
+  color:#C7F284;
+
+
+}
+/* Hide the wallet icon (e.g., Phantom logo) */
+.custom-wallet-button .wallet-adapter-button-trigger {
+  background-image: none !important; /* Removes background images like the logo */
+  padding-left: 12px !important; /* Adjust padding to compensate for removed icon */
+}
+/* Style for the dropdown list */
+.wallet-adapter-dropdown-list {
+  background: linear-gradient(0deg, rgba(21, 30, 40, 0.6), rgba(21, 30, 40, 0.6)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) !important;
+  z-index: 1000 !important;
+  border-radius: 8px !important; /* Optional: for rounded corners */
+}
+
+/* Style for the active dropdown list */
+.wallet-adapter-dropdown-list-active {
+  background: linear-gradient(0deg, rgba(21, 30, 40, 0.6), rgba(21, 30, 40, 0.6)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) !important;
+  z-index: 1000 !important;
+  border-radius: 8px !important; /* Optional: for rounded corners */
+}
+
+/* Optional: Style items within the dropdown */
+.wallet-adapter-dropdown-list-item {
+  color: #ffffff !important; /* White text for contrast */
+}
+
+.wallet-adapter-dropdown-list-item:hover {
+  background-color: rgba(0, 0, 0, 0.3) !important; /* Darker hover effect */
+  color: #e0e0e0 !important; /* Slightly lighter text on hover */
+}
+.wallet-adapter-dropdown-list {
+  @apply bg-gray-800 z-100 rounded-lg;
+}
+@supports (background: linear-gradient(0deg, rgba(21,30,40,0.6), rgba(21,30,40,0.6))) {
+  .wallet-adapter-dropdown-list {
+    @apply bg-[linear-gradient(0deg,rgba(21,30,40,0.6),rgba(21,30,40,0.6)),linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2))];
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
 .chat-messages::-webkit-scrollbar {

@@ -85,7 +85,7 @@ export default function Chat() {
       />
 
       {/* Header */}
-      <header className={`relative z-10 flex items-center justify-between px-6 py-2 ${bgGradient} backdrop-blur-sm border-b border-slate-700/50`}>
+      <header className={`relative  flex items-center justify-between px-6 py-2 ${bgGradient} backdrop-blur-sm border-b border-slate-700/50`}>
         <div className="flex items-center">
           <div className="">
             {/* <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full opacity-80"></div> */}
@@ -94,11 +94,14 @@ export default function Chat() {
           <span className="text-white font-semibold text-lg mt-2">Jupurr</span>
         </div>
         {/* Replaced static connect button with WalletMultiButton */}
-        <WalletMultiButton className=" text-whit bg-gradient-to-br from-slate-900 via-slate-800 to-teal-900" />
+        <div className='z-1000'>
+             <WalletMultiButton className="wallet-adapter-button custom-wallet-button " />
+        </div>
+     
       </header>
 
       {/* Main Content */}
-      <div className={`relative z-10 flex flex-col flex-1 w-full items-center px-6  h-full my-4 `}>
+      <div className={`relative  flex flex-col flex-1 w-full items-center px-6  h-full my-4 `}>
         {/* Main Chat Modal */}
         <div className={`flex flex-col  w-full h-full max-w-3xl flex-1 backdrop-blur-[20px] rounded-3xl border border-slate-700/50 shadow-2xl ${bgGradient} h-[80vh] max-h-[80vh] overflow-hidden `}>
           {/* Chat Messages Area */}
